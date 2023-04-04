@@ -1,0 +1,16 @@
+name: Hello There!!!
+
+on: [pull_request_target, issues]
+
+jobs: 
+  greeting:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        issue-message: "Need a skill that can help you boost your personal and professional life? First Issue"
+        pr-message: "We Got You Covered, welcome to continue from where you stopped' first pull request"
